@@ -1,5 +1,4 @@
 class Asignatura:
-   
     cantidad_asignaturas = 0
 
     def __init__(self, nombre, codigo, creditos):
@@ -10,7 +9,6 @@ class Asignatura:
         
         Asignatura.cantidad_asignaturas += 1
 
-   
     @property
     def nombre(self):
         return self._nombre
@@ -42,4 +40,3 @@ class Asignatura:
     @classmethod
     def cantidad_de_asignaturas(cls):
         return cls.cantidad_asignaturas
-

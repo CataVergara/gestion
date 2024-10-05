@@ -13,18 +13,15 @@ class GestionAcademicaApp:
         self.root = root
         self.root.title("Gestión Académica")
 
-       
         self.estudiantes = []
         self.profesores = []
         self.asignaturas = []
         self.grupos = []
         self.programas = []
 
-        
         self.create_widgets()
 
     def create_widgets(self):
-       
         tk.Label(self.root, text="Estudiante:").grid(row=0, column=0)
         self.entry_nombre_estudiante = tk.Entry(self.root)
         self.entry_nombre_estudiante.grid(row=0, column=1)
@@ -45,10 +42,8 @@ class GestionAcademicaApp:
         self.entry_semestre = tk.Entry(self.root)
         self.entry_semestre.grid(row=4, column=1)
 
-        
         tk.Button(self.root, text="Agregar Estudiante", command=self.agregar_estudiante).grid(row=5, column=0, columnspan=2)
 
-       
         tk.Label(self.root, text="Profesor:").grid(row=6, column=0)
         self.entry_nombre_profesor = tk.Entry(self.root)
         self.entry_nombre_profesor.grid(row=6, column=1)
@@ -65,10 +60,8 @@ class GestionAcademicaApp:
         self.entry_departamento = tk.Entry(self.root)
         self.entry_departamento.grid(row=9, column=1)
 
-        
         tk.Button(self.root, text="Agregar Profesor", command=self.agregar_profesor).grid(row=10, column=0, columnspan=2)
 
-       
         tk.Label(self.root, text="Asignatura:").grid(row=11, column=0)
         self.entry_nombre_asignatura = tk.Entry(self.root)
         self.entry_nombre_asignatura.grid(row=11, column=1)
@@ -81,10 +74,8 @@ class GestionAcademicaApp:
         self.entry_creditos = tk.Entry(self.root)
         self.entry_creditos.grid(row=13, column=1)
 
-        
         tk.Button(self.root, text="Agregar Asignatura", command=self.agregar_asignatura).grid(row=14, column=0, columnspan=2)
 
-       
         tk.Label(self.root, text="Grupo:").grid(row=15, column=0)
         self.entry_numero_grupo = tk.Entry(self.root)
         self.entry_numero_grupo.grid(row=15, column=1)
@@ -97,10 +88,8 @@ class GestionAcademicaApp:
         self.entry_profesor_grupo = tk.Entry(self.root)
         self.entry_profesor_grupo.grid(row=17, column=1)
 
-        
         tk.Button(self.root, text="Agregar Grupo", command=self.agregar_grupo).grid(row=18, column=0, columnspan=2)
 
-        
         tk.Label(self.root, text="Programa Académico:").grid(row=19, column=0)
         self.entry_nombre_programa = tk.Entry(self.root)
         self.entry_nombre_programa.grid(row=19, column=1)
@@ -109,10 +98,8 @@ class GestionAcademicaApp:
         self.entry_codigo_programa = tk.Entry(self.root)
         self.entry_codigo_programa.grid(row=20, column=1)
 
-        
         tk.Button(self.root, text="Agregar Programa Académico", command=self.agregar_programa).grid(row=21, column=0, columnspan=2)
 
-       
         tk.Button(self.root, text="Mostrar Información", command=self.mostrar_informacion).grid(row=22, column=0, columnspan=2)
 
     def agregar_estudiante(self):

@@ -1,5 +1,4 @@
 class Grupo:
-    
     cantidad_grupos = 0
 
     def __init__(self, numero_grupo, asignatura, profesor):
@@ -8,10 +7,8 @@ class Grupo:
         self._profesor = profesor
         self._estudiantes = []
 
-        
         Grupo.cantidad_grupos += 1
 
-    
     @property
     def numero_grupo(self):
         return self._numero_grupo
@@ -40,7 +37,6 @@ class Grupo:
     def estudiantes(self):
         return self._estudiantes
 
-    
     def agregar_estudiante(self, estudiante):
         if estudiante not in self._estudiantes:
             self._estudiantes.append(estudiante)
@@ -56,18 +52,15 @@ class Grupo:
                 return
         print(f"No se encontró un estudiante con la matrícula {matricula} en el grupo {self._numero_grupo}.")
 
-    
     def mostrar_grupo(self):
         print(f"Grupo {self._numero_grupo} - Asignatura: {self._asignatura.nombre} - Profesor: {self._profesor.nombre}")
         print("Estudiantes en el grupo:")
         for estudiante in self._estudiantes:
             print(f"  - {estudiante.nombre} (Matrícula: {estudiante.matricula})")
 
-   
     def presentarse(self):
         print(f"Este es el grupo {self._numero_grupo}, para la asignatura {self._asignatura.nombre}, impartida por el profesor {self._profesor.nombre}.")
 
-    
     @classmethod
     def cantidad_grupos(cls):
         return cls.cantidad_grupos

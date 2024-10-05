@@ -1,6 +1,5 @@
 from Persona import Persona
 
-
 class Estudiante(Persona):
     contador_estudiantes = 0
 

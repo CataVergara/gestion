@@ -1,18 +1,12 @@
 from Persona import Persona
 
-
 class Profesor(Persona):
-    
     contador_profesores = 0
-
     def __init__(self, nombre, apellido, fecha_de_nacimiento, numero_empleado, departamento):
-        
         super().__init__(nombre, apellido, fecha_de_nacimiento)
-
         self._numero_empleado = numero_empleado
         self._departamento = departamento
 
-        
         Profesor.contador_profesores += 1
 
     @property
@@ -31,11 +25,9 @@ class Profesor(Persona):
     def departamento(self, valor):
         self._departamento = valor
 
-   
     def ensenar(self, materia):
         print(f"El profesor {self.nombre} {self.apellido} enseña la materia: {materia}.")
 
-    
     def presentarse(self):
         return f"Hola, soy el profesor {self.nombre} {self.apellido}, con número de empleado {self.numero_empleado}, del departamento de {self.departamento}."
 

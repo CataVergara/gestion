@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 import tkinter as tk
 from tkinter import messagebox
 from Persona import Persona
@@ -183,6 +182,3 @@ if __name__ == "__main__":
     root = tk.Tk()
     app = GestionAcademicaApp(root)
     root.mainloop()
-=======
-# Hecho por Catalina Vergara y Constanza Oyarzo
->>>>>>> Stashed changes

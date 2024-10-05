@@ -1,7 +1,11 @@
+from Asignatura import Asignatura
+from Profesor import Profesor
+from Estudiante import Estudiante
+
 class Grupo:
     cantidad_grupos = 0
 
-    def __init__(self, numero_grupo, asignatura, profesor):
+    def __init__(self, numero_grupo:int, asignatura, profesor):
         self._numero_grupo = numero_grupo
         self._asignatura = asignatura
         self._profesor = profesor
@@ -44,7 +48,7 @@ class Grupo:
         else:
             print(f"El estudiante {estudiante.nombre} ya está en el grupo {self._numero_grupo}.")
 
-    def eliminar_estudiante(self, matricula):
+    def eliminar_estudiante(self, matricula:str):
         for estudiante in self._estudiantes:
             if estudiante.matricula == matricula:
                 self._estudiantes.remove(estudiante)

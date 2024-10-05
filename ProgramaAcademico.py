@@ -3,7 +3,7 @@ from Grupo import Grupo
 class ProgramaAcademico:
     contador_programas = 0
 
-    def __init__(self, nombre, codigo):
+    def __init__(self, nombre:str, codigo:str):
         self._nombre = nombre
         self._codigo = codigo
         self._grupos = []  

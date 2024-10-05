@@ -1,11 +1,10 @@
 class Asignatura:
     cantidad_asignaturas = 0
 
-    def __init__(self, nombre, codigo, creditos):
+    def __init__(self, nombre:str, codigo:str, creditos:int):
         self._nombre = nombre
         self._codigo = codigo
         self._creditos = creditos
-        
         
         Asignatura.cantidad_asignaturas += 1
 

@@ -1,4 +1,5 @@
 from Persona import Persona
+<<<<<<< Updated upstream
 
 
 class Profesor(Persona):
@@ -42,3 +43,36 @@ class Profesor(Persona):
     @staticmethod
     def cantidad_profesores():
         return Profesor.contador_profesores
+=======
+
+class Profesor(Persona):
+    def __init__(self, contador_profesores:int, numero_empleado:str, departamento:str):
+        self._contador_profesores = contador_profesores
+        self.__numero_empleado = numero_empleado
+        self.__departamento = departamento
+
+    @property
+    def numero_empleado(self):
+        return self.__numero_empleado
+    
+    @numero_empleado.setter
+    def numero_empleado(self, numero_empleado_setter):
+        self.__numero_empleado = numero_empleado_setter
+
+    @property
+    def departamento(self):
+        return self.__departamento
+    
+    @departamento.setter
+    def departamento(self, departamento_setter):
+        self.__departamento = departamento_setter
+
+    def cantidad_profesores(self, cantidad_profesores:int):
+        pass
+
+    def enseñar(self, materia:str):
+        pass
+
+    def presentarse(self):
+        pass
+>>>>>>> Stashed changes

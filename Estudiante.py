@@ -1,14 +1,15 @@
 from Persona import Persona
 
 class Estudiante(Persona):
-    contador_estudiantes = 0
+    _contador_estudiantes:int = 0
 
-    def __init__(self, nombre, apellido, fecha_de_nacimiento, matricula:str, carrera:str, semestre:int):
+    def __init__(self, nombre:str, apellido:str, fecha_de_nacimiento:str, matricula:str, carrera:str, semestre:int):
         super().__init__(nombre, apellido, fecha_de_nacimiento)
         self._matricula = matricula
         self._carrera = carrera
         self._semestre = semestre
-        Estudiante.contador_estudiantes += 1
+
+        Estudiante._contador_estudiantes += 1
 
     @property
     def matricula(self):
@@ -37,10 +38,6 @@ class Estudiante(Persona):
     def estudiar(self, materia:str, horas:int):
         return f"El estudiante {self._nombre} está estudiando {materia} por {horas} horas."
 
-    @staticmethod
-    def cantidad_estudiantes():
-        return Estudiante.contador_estudiantes
-
     # Este metodo esta siendo heredado de la clase Asignatura, cuando en realidad Estudiante deberia tener el metodo presentarse de Persona
     # De hecho no hay ninguna referencia de la clase Asignatura en esta clase?
     def mostrar_informacion(self):
@@ -48,3 +45,7 @@ class Estudiante(Persona):
     
     # def presentarse(self):
     #     return super().presentarse(f"Hola, soy el estudiante {self.nombre} {self.apellido}")
+
+    @classmethod
+    def cantidad_estudiantes(cls)->int:
+        return cls._contador_estudiantes

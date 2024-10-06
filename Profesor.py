@@ -1,13 +1,14 @@
 from Persona import Persona
 
 class Profesor(Persona):
-    contador_profesores = 0
-    def __init__(self, nombre, apellido, fecha_de_nacimiento, numero_empleado:str, departamento:str):
+    _contador_profesores:int = 0
+
+    def __init__(self, nombre:str, apellido:str, fecha_de_nacimiento:str, numero_empleado:str, departamento:str):
         super().__init__(nombre, apellido, fecha_de_nacimiento)
         self._numero_empleado = numero_empleado
         self._departamento = departamento
 
-        Profesor.contador_profesores += 1
+        Profesor._contador_profesores += 1
 
     @property
     def numero_empleado(self):
@@ -32,6 +33,6 @@ class Profesor(Persona):
     def presentarse(self):
         return f"Hola, soy el profesor {self.nombre} {self.apellido}, con número de empleado {self.numero_empleado}, del departamento de {self.departamento}."
 
-    @staticmethod
-    def cantidad_profesores():
-        return Profesor.contador_profesores
+    @classmethod
+    def cantidad_profesores(cls)->int:
+        return cls._contador_profesores

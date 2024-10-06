@@ -3,7 +3,7 @@ from Profesor import Profesor
 from Estudiante import Estudiante
 
 class Grupo:
-    cantidad_grupos = 0
+    _contador_grupos:int = 0
 
     def __init__(self, numero_grupo:int, asignatura, profesor):
         self._numero_grupo = numero_grupo
@@ -11,7 +11,7 @@ class Grupo:
         self._profesor = profesor
         self._estudiantes = []
 
-        Grupo.cantidad_grupos += 1
+        Grupo._contador_grupos += 1
 
     @property
     def numero_grupo(self):
@@ -66,6 +66,6 @@ class Grupo:
         print(f"Este es el grupo {self._numero_grupo}, para la asignatura {self._asignatura.nombre}, impartida por el profesor {self._profesor.nombre}.")
 
     @classmethod
-    def cantidad_grupos(cls):
-        return cls.cantidad_grupos
+    def cantidad_grupos(cls)->int:
+        return cls._contador_grupos
 

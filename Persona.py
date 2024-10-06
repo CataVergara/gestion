@@ -1,12 +1,12 @@
 class Persona:
-    contador_personas = 0
+    _contador_personas:int = 0
 
     def __init__(self, nombre:str, apellido:str, fecha_de_nacimiento:str):
         self._nombre = nombre
         self._apellido = apellido
         self._fecha_de_nacimiento = fecha_de_nacimiento
 
-        Persona.contador_personas += 1
+        Persona._contador_personas += 1
 
     @property
     def nombre(self):
@@ -35,6 +35,6 @@ class Persona:
     def presentarse(self):
         print(f"Hola, mi nombre es {self._nombre} {self._apellido}. Nací el {self._fecha_de_nacimiento}.")
 
-    @staticmethod
-    def cantidad_personas():
-        return Persona.contador_personas
+    @classmethod
+    def cantidad_personas(cls)->int:
+        return cls._contador_personas

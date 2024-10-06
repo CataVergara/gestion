@@ -1,14 +1,14 @@
 from Grupo import Grupo
 
 class ProgramaAcademico:
-    contador_programas = 0
+    _contador_programas:int = 0
 
     def __init__(self, nombre:str, codigo:str):
         self._nombre = nombre
         self._codigo = codigo
         self._grupos = []  
 
-        ProgramaAcademico.contador_programas += 1
+        ProgramaAcademico._contador_programas += 1
 
     @property
     def nombre(self):
@@ -36,7 +36,7 @@ class ProgramaAcademico:
         else:
             print(f"El grupo {grupo.numero_grupo} ya está incluido en el programa académico.")
 
-    def eliminar_grupo(self, numero_grupo):
+    def eliminar_grupo(self, numero_grupo:int):
         grupo_a_eliminar = None
         for grupo in self._grupos:
             if grupo.numero_grupo == numero_grupo:
@@ -57,6 +57,6 @@ class ProgramaAcademico:
         else:
             print("No hay grupos asignados a este programa académico.")
 
-    @staticmethod
-    def cantidad_programas():
-        return ProgramaAcademico.contador_programas
+    @classmethod
+    def cantidad_programas(cls)->int:
+        return cls._contador_programas

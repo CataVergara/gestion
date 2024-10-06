@@ -1,12 +1,12 @@
 class Asignatura:
-    cantidad_asignaturas = 0
+    _contador_asignaturas:int = 0
 
     def __init__(self, nombre:str, codigo:str, creditos:int):
         self._nombre = nombre
         self._codigo = codigo
         self._creditos = creditos
         
-        Asignatura.cantidad_asignaturas += 1
+        Asignatura._contador_asignaturas += 1
 
     @property
     def nombre(self):
@@ -37,5 +37,5 @@ class Asignatura:
         print(f"Asignatura: {self.nombre}, Código: {self.codigo}, Créditos: {self.creditos}")
 
     @classmethod
-    def cantidad_de_asignaturas(cls):
-        return cls.cantidad_asignaturas
+    def cantidad_de_asignaturas(cls)->int:
+        return cls._contador_asignaturas

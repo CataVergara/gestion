@@ -33,7 +33,7 @@ class Persona:
         self._fecha_de_nacimiento = valor
 
     def presentarse(self):
-        print(f"Hola, mi nombre es {self._nombre} {self._apellido}. Nací el {self._fecha_de_nacimiento}.")
+        return f"Hola, mi nombre es {self._nombre} {self._apellido} y nací el {self._fecha_de_nacimiento}"
 
     @classmethod
     def cantidad_personas(cls)->int:

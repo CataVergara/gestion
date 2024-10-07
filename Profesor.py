@@ -29,9 +29,9 @@ class Profesor(Persona):
     def ensenar(self, materia):
         print(f"El profesor {self.nombre} {self.apellido} enseña la materia: {materia}.")
 
-    # Este metodo deberia ser heredado de la clase persona
+    # Heredado de la clase persona
     def presentarse(self):
-        return f"Hola, soy el profesor {self.nombre} {self.apellido}, con número de empleado {self.numero_empleado}, del departamento de {self.departamento}."
+        return f"{super().presentarse()}. Con número de empleado {self.numero_empleado}, del departamento de {self.departamento}."
 
     @classmethod
     def cantidad_profesores(cls)->int:

@@ -38,13 +38,9 @@ class Estudiante(Persona):
     def estudiar(self, materia:str, horas:int):
         return f"El estudiante {self._nombre} está estudiando {materia} por {horas} horas."
 
-    # Este metodo esta siendo heredado de la clase Asignatura, cuando en realidad Estudiante deberia tener el metodo presentarse de Persona
-    # De hecho no hay ninguna referencia de la clase Asignatura en esta clase?
-    def mostrar_informacion(self):
-        return f"{super().mostrar_informacion()}, Matrícula: {self._matricula}, Carrera: {self._carrera}, Semestre: {self._semestre}"
-    
-    # def presentarse(self):
-    #     return super().presentarse(f"Hola, soy el estudiante {self.nombre} {self.apellido}")
+    # Estudiante hereda el metodo presentarse de Persona
+    def presentarse(self):
+        return f"{super().presentarse()}. Mi matrícula es: {self._matricula}, de la carrera de {self._carrera} y el semestre numero {self._semestre}."
 
     @classmethod
     def cantidad_estudiantes(cls)->int:

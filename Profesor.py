@@ -15,18 +15,18 @@ class Profesor(Persona):
         return self._numero_empleado
 
     @numero_empleado.setter
-    def numero_empleado(self, valor):
-        self._numero_empleado = valor
+    def numero_empleado(self, numero_empleado_setter):
+        self._numero_empleado = numero_empleado_setter
 
     @property
     def departamento(self):
         return self._departamento
 
     @departamento.setter
-    def departamento(self, valor):
-        self._departamento = valor
+    def departamento(self, departamento_setter):
+        self._departamento = departamento_setter
 
-    def ensenar(self, materia):
+    def ensenar(self, materia:str):
         print(f"El profesor {self.nombre} {self.apellido} enseña la materia: {materia}.")
 
     # Heredado de la clase persona

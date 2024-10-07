@@ -13,24 +13,24 @@ class Asignatura:
         return self._nombre
 
     @nombre.setter
-    def nombre(self, valor):
-        self._nombre = valor
+    def nombre(self, nombre_setter):
+        self._nombre = nombre_setter
 
     @property
     def codigo(self):
         return self._codigo
 
     @codigo.setter
-    def codigo(self, valor):
-        self._codigo = valor
+    def codigo(self, codigo_setter):
+        self._codigo = codigo_setter
 
     @property
     def creditos(self):
         return self._creditos
 
     @creditos.setter
-    def creditos(self, valor):
-        self._creditos = valor
+    def creditos(self, creditos_setter):
+        self._creditos = creditos_setter
 
     # Métodos
     def mostrar_informacion(self):

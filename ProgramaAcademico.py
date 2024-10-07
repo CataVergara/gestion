@@ -3,6 +3,7 @@ from Grupo import Grupo
 class ProgramaAcademico:
     _contador_programas:int = 0
 
+    # atributos: nombre, codigo, grupos
     def __init__(self, nombre:str, codigo:str):
         self._nombre = nombre
         self._codigo = codigo
@@ -15,16 +16,16 @@ class ProgramaAcademico:
         return self._nombre
 
     @nombre.setter
-    def nombre(self, valor):
-        self._nombre = valor
+    def nombre(self, nombre_setter):
+        self._nombre = nombre_setter
 
     @property
     def codigo(self):
         return self._codigo
 
     @codigo.setter
-    def codigo(self, valor):
-        self._codigo = valor
+    def codigo(self, codigo_setter):
+        self._codigo = codigo_setter
 
     @property
     def grupos(self):

@@ -16,24 +16,24 @@ class Estudiante(Persona):
         return self._matricula
     
     @matricula.setter
-    def matricula(self, valor):
-        self._matricula = valor
+    def matricula(self, matricula_setter):
+        self._matricula = matricula_setter
 
     @property
     def carrera(self):
         return self._carrera
     
     @carrera.setter
-    def carrera(self, valor):
-        self._carrera = valor
+    def carrera(self, carrera_setter):
+        self._carrera = carrera_setter
 
     @property
     def semestre(self):
         return self._semestre
     
     @semestre.setter
-    def semestre(self, valor):
-        self._semestre = valor
+    def semestre(self, semestre_setter):
+        self._semestre = semestre_setter
 
     def estudiar(self, materia:str, horas:int):
         return f"El estudiante {self._nombre} está estudiando {materia} por {horas} horas."

@@ -5,6 +5,7 @@ from Estudiante import Estudiante
 class Grupo:
     _contador_grupos:int = 0
 
+    #
     def __init__(self, numero_grupo:int, asignatura, profesor):
         self._numero_grupo = numero_grupo
         self._asignatura = asignatura
@@ -18,28 +19,32 @@ class Grupo:
         return self._numero_grupo
 
     @numero_grupo.setter
-    def numero_grupo(self, valor):
-        self._numero_grupo = valor
+    def numero_grupo(self, numero_grupo_setter):
+        self._numero_grupo = numero_grupo_setter
 
     @property
     def asignatura(self):
         return self._asignatura
 
     @asignatura.setter
-    def asignatura(self, valor):
-        self._asignatura = valor
+    def asignatura(self, asignatura_setter):
+        self._asignatura = asignatura_setter
 
     @property
     def profesor(self):
         return self._profesor
 
     @profesor.setter
-    def profesor(self, valor):
-        self._profesor = valor
+    def profesor(self, profesor_setter):
+        self._profesor = profesor_setter
 
     @property
     def estudiantes(self):
         return self._estudiantes
+
+    @estudiante.setter
+    def estudiantes(self):
+        self._estudiantes = estudiante_setter
 
     def agregar_estudiante(self, estudiante):
         if estudiante not in self._estudiantes:

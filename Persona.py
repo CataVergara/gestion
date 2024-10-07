@@ -13,24 +13,24 @@ class Persona:
         return self._nombre
 
     @nombre.setter
-    def nombre(self, valor):
-        self._nombre = valor
+    def nombre(self, nombre_setter):
+        self._nombre = nombre_setter
 
     @property
     def apellido(self):
         return self._apellido
 
     @apellido.setter
-    def apellido(self, valor):
-        self._apellido = valor
+    def apellido(self, apellido_setter):
+        self._apellido = apellido_setter
 
     @property
     def fecha_de_nacimiento(self):
         return self._fecha_de_nacimiento
 
     @fecha_de_nacimiento.setter
-    def fecha_de_nacimiento(self, valor):
-        self._fecha_de_nacimiento = valor
+    def fecha_de_nacimiento(self, fecha_nacimiento_setter):
+        self._fecha_de_nacimiento = fecha_nacimiento_setter
 
     def presentarse(self):
         return f"Hola, mi nombre es {self._nombre} {self._apellido} y nací el {self._fecha_de_nacimiento}"

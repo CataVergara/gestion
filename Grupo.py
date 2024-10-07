@@ -5,8 +5,7 @@ from Estudiante import Estudiante
 class Grupo:
     _contador_grupos:int = 0
 
-    #
-    def __init__(self, numero_grupo:int, asignatura, profesor):
+    def __init__(self, numero_grupo:int, asignatura:Asignatura, profesor:Profesor):
         self._numero_grupo = numero_grupo
         self._asignatura = asignatura
         self._profesor = profesor
@@ -42,11 +41,11 @@ class Grupo:
     def estudiantes(self):
         return self._estudiantes
 
-    @estudiante.setter
-    def estudiantes(self):
-        self._estudiantes = estudiante_setter
+    @estudiantes.setter
+    def estudiantes(self, estudiantes_setter):
+        self._estudiantes = estudiantes_setter
 
-    def agregar_estudiante(self, estudiante):
+    def agregar_estudiante(self, estudiante:Estudiante):
         if estudiante not in self._estudiantes:
             self._estudiantes.append(estudiante)
             print(f"Estudiante {estudiante.nombre} agregado al grupo {self._numero_grupo}.")

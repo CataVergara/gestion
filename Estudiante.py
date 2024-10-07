@@ -40,7 +40,7 @@ class Estudiante(Persona):
 
     # Estudiante hereda el metodo presentarse de Persona
     def presentarse(self):
-        return f"{super().presentarse()}. Mi matrícula es: {self._matricula}, de la carrera de {self._carrera} y el semestre numero {self._semestre}."
+        return f"{super().presentarse()}. Mi matrícula es: {self._matricula}, de la carrera de {self._carrera} y estoy en el semestre numero {self._semestre}."
 
     @classmethod
     def cantidad_estudiantes(cls)->int:

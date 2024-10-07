@@ -3,7 +3,6 @@ from Grupo import Grupo
 class ProgramaAcademico:
     _contador_programas:int = 0
 
-    # atributos: nombre, codigo, grupos
     def __init__(self, nombre:str, codigo:str):
         self._nombre = nombre
         self._codigo = codigo
@@ -30,8 +29,12 @@ class ProgramaAcademico:
     @property
     def grupos(self):
         return self._grupos
+    
+    @grupos.setter
+    def grupos(self, grupos_setter):
+        self._grupos = grupos_setter
 
-    def agregar_grupo(self, grupo):
+    def agregar_grupo(self, grupo:Grupo):
         if grupo not in self._grupos:
             self._grupos.append(grupo)
         else:

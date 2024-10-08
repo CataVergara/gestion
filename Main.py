@@ -152,32 +152,46 @@ class GestionAcademicaApp:
         messagebox.showinfo("Éxito", "Profesor agregado exitosamente!")
 
     def agregar_asignatura(self):
-        nombre = self.entry_nombre_asignatura.get()
-        codigo = self.entry_codigo_asignatura.get()
-        creditos = int(self.entry_creditos.get())
+        nombre = self.entry_nombre_asignatura.get().strip()
+        codigo = self.entry_codigo_asignatura.get().strip()
+        creditos = self.entry_creditos.get().strip()
 
-        # Validaciones
         if not nombre or not codigo or not creditos:
             messagebox.showerror("Error", "Todos los campos de la asignatura son obligatorios.")
             return
-        
-        if not creditos.isdigit() or int(creditos) <= 0:
+
+        try:
+            creditos = int(creditos)
+            if creditos <= 0:
+                raise ValueError 
+        except ValueError:
             messagebox.showerror("Error", "Los créditos deben ser un número entero positivo.")
             return
-            
-        nueva_asignatura = Asignatura(nombre, codigo, int(creditos))
+
+        nueva_asignatura = Asignatura(nombre, codigo, creditos)
         self.asignaturas.append(nueva_asignatura)
         messagebox.showinfo("Éxito", "Asignatura agregada exitosamente!")
+
         
 
     def agregar_grupo(self):
-        numero_grupo = int(self.entry_numero_grupo.get())
-        codigo_asignatura = self.entry_asignatura_grupo.get()
-        numero_empleado = self.entry_profesor_grupo.get()
-        
+        numero_grupo = self.entry_numero_grupo.get().strip()
+        codigo_asignatura = self.entry_asignatura_grupo.get().strip()
+        numero_empleado = self.entry_profesor_grupo.get().strip()
+
+        if not numero_grupo or not codigo_asignatura or not numero_empleado:
+            messagebox.showerror("Error", "Todos los campos del grupo son obligatorios.")
+            return
+
+        try:
+            numero_grupo = int(numero_grupo)
+        except ValueError:
+            messagebox.showerror("Error", "El número de grupo debe ser un número entero.")
+            return
+
         asignatura = next((asignatura for asignatura in self.asignaturas if asignatura.codigo == codigo_asignatura), None)
         profesor = next((profesor for profesor in self.profesores if profesor.numero_empleado == numero_empleado), None)
-        
+
         if asignatura and profesor:
             nuevo_grupo = Grupo(numero_grupo, asignatura, profesor)
             self.grupos.append(nuevo_grupo)
@@ -185,13 +199,19 @@ class GestionAcademicaApp:
         else:
             messagebox.showerror("Error", "Asignatura o profesor no encontrado.")
 
+
     def agregar_programa(self):
-        nombre = self.entry_nombre_programa.get()
-        codigo = self.entry_codigo_programa.get()
-        
+        nombre = self.entry_nombre_programa.get().strip()
+        codigo = self.entry_codigo_programa.get().strip()
+
+        if not nombre or not codigo:
+            messagebox.showerror("Error", "Todos los campos del programa académico son obligatorios.")
+            return
+
         nuevo_programa = ProgramaAcademico(nombre, codigo)
         self.programas.append(nuevo_programa)
         messagebox.showinfo("Éxito", "Programa académico agregado exitosamente!")
+
 
     def mostrar_informacion(self):
         info = ""

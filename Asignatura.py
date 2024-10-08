@@ -32,10 +32,19 @@ class Asignatura:
     def creditos(self, creditos_setter):
         self._creditos = creditos_setter
 
-    # Métodos
     def mostrar_informacion(self):
-        print(f"Asignatura: {self.nombre}, Código: {self.codigo}, Créditos: {self.creditos}")
+            return f"Asignatura: {self.nombre} (Código: {self.codigo}), Créditos: {self.creditos}"
 
     @classmethod
-    def cantidad_de_asignaturas(cls)->int:
+    def cantidad_asignaturas(cls):
         return cls._contador_asignaturas
+    
+    @staticmethod
+    def es_codigo_valido(codigo:str)->bool:
+        """Verifica si el código de la asignatura es válido."""
+        return len(codigo) == 5 and codigo.isalnum()
+
+    @staticmethod
+    def es_credito_valido(creditos:int)->bool:
+        """Verifica si la cantidad de créditos es válida."""
+        return 0 < creditos <= 10

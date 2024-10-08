@@ -149,7 +149,7 @@ class GestionAcademicaApp:
         codigo = self.entry_codigo_asignatura.get()
         creditos = int(self.entry_creditos.get())
 
-        # Validaciones
+        Validaciones
         if not nombre or not codigo or not creditos:
             messagebox.showerror("Error", "Todos los campos de la asignatura son obligatorios.")
             return
@@ -191,8 +191,8 @@ class GestionAcademicaApp:
         info += "Estudiantes:\n" + "\n".join([estudiante.presentarse() for estudiante in self.estudiantes]) + "\n"
         info += "Profesores:\n" + "\n".join([profesor.presentarse() for profesor in self.profesores]) + "\n"
         info += "Asignaturas:\n" + "\n".join([asignatura.mostrar_informacion() for asignatura in self.asignaturas]) + "\n"
-        info += "Grupos:\n" + "\n".join([grupo.mostrar_informacion() for grupo in self.grupos]) + "\n"
-        info += "Programas Académicos:\n" + "\n".join([programa.mostrar_informacion() for programa in self.programas]) + "\n"
+        info += "Grupos:\n" + "\n".join([grupo.mostrar_grupo() for grupo in self.grupos]) + "\n"
+        info += "Programas Académicos:\n" + "\n".join([programa.mostrar_programa() for programa in self.programas]) + "\n"
         
         messagebox.showinfo("Información", info)
 

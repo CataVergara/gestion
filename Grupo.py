@@ -61,10 +61,12 @@ class Grupo:
         print(f"No se encontró un estudiante con la matrícula {matricula} en el grupo {self._numero_grupo}.")
 
     def mostrar_grupo(self):
-        print(f"Grupo {self._numero_grupo} - Asignatura: {self._asignatura.nombre} - Profesor: {self._profesor.nombre}")
-        print("Estudiantes en el grupo:")
+        info = f"Grupo {self._numero_grupo} - Asignatura: {self._asignatura.nombre} - Profesor: {self._profesor.nombre}\n"
+        info += "Estudiantes en el grupo:\n"
         for estudiante in self._estudiantes:
-            print(f"  - {estudiante.nombre} (Matrícula: {estudiante.matricula})")
+            info += f"  - {estudiante.nombre} (Matrícula: {estudiante.matricula})\n"
+        return info
+
 
     def presentarse(self):
         print(f"Este es el grupo {self._numero_grupo}, para la asignatura {self._asignatura.nombre}, impartida por el profesor {self._profesor.nombre}.")

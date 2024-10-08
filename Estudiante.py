@@ -46,12 +46,4 @@ class Estudiante(Persona):
     def cantidad_estudiantes(cls)->int:
         return cls._contador_estudiantes
     
-    @staticmethod
-    def es_matricula_valida(matricula:str)->bool:
-        """Verifica si una matrícula es válida."""
-        return len(matricula) == 8 and matricula.isdigit()
-
-    @staticmethod
-    def es_semestre_valido(semestre:int)->bool:
-        """Verifica si el semestre es válido."""
-        return 1 <= semestre <= 10
+    

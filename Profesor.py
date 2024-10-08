@@ -36,3 +36,5 @@ class Profesor(Persona):
     @classmethod
     def cantidad_profesores(cls)->int:
         return cls._contador_profesores
+    
+   

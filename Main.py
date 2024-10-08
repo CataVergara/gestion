@@ -108,16 +108,37 @@ class GestionAcademicaApp:
         matricula = self.entry_matricula.get()
         carrera = self.entry_carrera.get()
         semestre = int(self.entry_semestre.get())
+
+            
+        if not nombre or not apellido or not matricula or not carrera or not semestre:
+            messagebox.showerror("Error", "Todos los campos del estudiante son obligatorios.")
+            return
         
-        nuevo_estudiante = Estudiante(nombre, apellido, "2000-01-01", matricula, carrera, semestre)
+        if not semestre.isdigit() or int(semestre) <= 0:
+            messagebox.showerror("Error", "El semestre debe ser un número entero positivo.")
+            return
+
+        
+        nuevo_estudiante = Estudiante(nombre, apellido, "2000-01-01", matricula, carrera, int(semestre))
         self.estudiantes.append(nuevo_estudiante)
         messagebox.showinfo("Éxito", "Estudiante agregado exitosamente!")
+            
+    
 
     def agregar_profesor(self):
         nombre = self.entry_nombre_profesor.get()
         apellido = self.entry_apellido_profesor.get()
         numero_empleado = self.entry_numero_empleado.get()
         departamento = self.entry_departamento.get()
+
+        
+        if not nombre or not apellido or not numero_empleado or not departamento:
+            messagebox.showerror("Error", "Todos los campos del profesor son obligatorios.")
+            return
+        
+        if not numero_empleado.isdigit():
+            messagebox.showerror("Error", "El número de empleado debe ser un número entero.")
+            return
         
         nuevo_profesor = Profesor(nombre, apellido, "1985-01-01", numero_empleado, departamento)
         self.profesores.append(nuevo_profesor)
@@ -127,10 +148,20 @@ class GestionAcademicaApp:
         nombre = self.entry_nombre_asignatura.get()
         codigo = self.entry_codigo_asignatura.get()
         creditos = int(self.entry_creditos.get())
+
+        # Validaciones
+        if not nombre or not codigo or not creditos:
+            messagebox.showerror("Error", "Todos los campos de la asignatura son obligatorios.")
+            return
         
-        nueva_asignatura = Asignatura(nombre, codigo, creditos)
+        if not creditos.isdigit() or int(creditos) <= 0:
+            messagebox.showerror("Error", "Los créditos deben ser un número entero positivo.")
+            return
+            
+        nueva_asignatura = Asignatura(nombre, codigo, int(creditos))
         self.asignaturas.append(nueva_asignatura)
         messagebox.showinfo("Éxito", "Asignatura agregada exitosamente!")
+        
 
     def agregar_grupo(self):
         numero_grupo = int(self.entry_numero_grupo.get())

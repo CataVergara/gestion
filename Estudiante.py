@@ -45,5 +45,3 @@ class Estudiante(Persona):
     @classmethod
     def cantidad_estudiantes(cls)->int:
         return cls._contador_estudiantes
-    
-    

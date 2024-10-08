@@ -74,4 +74,3 @@ class Grupo:
     @classmethod
     def cantidad_grupos(cls)->int:
         return cls._contador_grupos
-

@@ -52,14 +52,17 @@ class ProgramaAcademico:
         else:
             print(f"No se encontró un grupo con el número {numero_grupo} en el programa académico.")
 
-    def mostrar_programa(self):
-        print(f"Programa Académico: {self.nombre} (Código: {self.codigo})")
+    def mostrar_programa(self) -> str:
+        info = f"Programa Académico: {self._nombre} (Código: {self._codigo})\n"
+        
         if self._grupos:
-            print("Grupos asignados:")
+            info += "Grupos asignados:\n"
             for grupo in self._grupos:
-                grupo.mostrar_grupo()  
+                info += grupo.mostrar_grupo() + "\n"
         else:
-            print("No hay grupos asignados a este programa académico.")
+            info += "No hay grupos asignados a este programa académico.\n"
+        
+        return info
 
     @classmethod
     def cantidad_programas(cls)->int:

@@ -34,7 +34,7 @@ class Asignatura:
 
     # Métodos
     def mostrar_informacion(self):
-        print(f"Asignatura: {self.nombre}, Código: {self.codigo}, Créditos: {self.creditos}")
+        return f"Asignatura: {self.nombre}, Código: {self.codigo}, Créditos: {self.creditos}"
 
     @classmethod
     def cantidad_de_asignaturas(cls)->int:

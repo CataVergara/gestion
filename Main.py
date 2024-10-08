@@ -22,6 +22,9 @@ class GestionAcademicaApp:
         self.create_widgets()
 
     def create_widgets(self):
+
+        # Entradas para ingresas los datos de los estudiantes
+
         tk.Label(self.root, text="Estudiante:").grid(row=0, column=0)
         self.entry_nombre_estudiante = tk.Entry(self.root)
         self.entry_nombre_estudiante.grid(row=0, column=1)
@@ -30,81 +33,104 @@ class GestionAcademicaApp:
         self.entry_apellido_estudiante = tk.Entry(self.root)
         self.entry_apellido_estudiante.grid(row=1, column=1)
 
-        tk.Label(self.root, text="Matrícula:").grid(row=2, column=0)
+        tk.Label(self.root, text="Fecha de nacimiento:").grid(row=2, column=0)
+        self.entry_nacimiento_estudiante = tk.Entry(self.root)
+        self.entry_nacimiento_estudiante.grid(row=2, column=1)
+
+        tk.Label(self.root, text="Matrícula:").grid(row=3, column=0)
         self.entry_matricula = tk.Entry(self.root)
-        self.entry_matricula.grid(row=2, column=1)
+        self.entry_matricula.grid(row=3, column=1)
 
-        tk.Label(self.root, text="Carrera:").grid(row=3, column=0)
+        tk.Label(self.root, text="Carrera:").grid(row=4, column=0)
         self.entry_carrera = tk.Entry(self.root)
-        self.entry_carrera.grid(row=3, column=1)
+        self.entry_carrera.grid(row=4, column=1)
 
-        tk.Label(self.root, text="Semestre:").grid(row=4, column=0)
+        tk.Label(self.root, text="Semestre:").grid(row=5, column=0)
         self.entry_semestre = tk.Entry(self.root)
-        self.entry_semestre.grid(row=4, column=1)
+        self.entry_semestre.grid(row=5, column=1)
 
-        tk.Button(self.root, text="Agregar Estudiante", command=self.agregar_estudiante).grid(row=5, column=0, columnspan=2)
+        tk.Button(self.root, text="Agregar Estudiante", command=self.agregar_estudiante).grid(row=6, column=0, columnspan=2)
 
-        tk.Label(self.root, text="Profesor:").grid(row=6, column=0)
+
+        # Entradas para ingresas los datos de los profesores
+
+        tk.Label(self.root, text="Profesor:").grid(row=7, column=0)
         self.entry_nombre_profesor = tk.Entry(self.root)
-        self.entry_nombre_profesor.grid(row=6, column=1)
+        self.entry_nombre_profesor.grid(row=7, column=1)
 
-        tk.Label(self.root, text="Apellido:").grid(row=7, column=0)
+        tk.Label(self.root, text="Apellido:").grid(row=8, column=0)
         self.entry_apellido_profesor = tk.Entry(self.root)
-        self.entry_apellido_profesor.grid(row=7, column=1)
+        self.entry_apellido_profesor.grid(row=8, column=1)
 
-        tk.Label(self.root, text="Número Empleado:").grid(row=8, column=0)
+        tk.Label(self.root, text="Fecha nacimiento:").grid(row=9, column=0)
+        self.entry_nacimiento_profesor = tk.Entry(self.root)
+        self.entry_nacimiento_profesor.grid(row=9, column=1)
+
+        tk.Label(self.root, text="Número Empleado:").grid(row=10, column=0)
         self.entry_numero_empleado = tk.Entry(self.root)
-        self.entry_numero_empleado.grid(row=8, column=1)
+        self.entry_numero_empleado.grid(row=10, column=1)
 
-        tk.Label(self.root, text="Departamento:").grid(row=9, column=0)
+        tk.Label(self.root, text="Departamento:").grid(row=11, column=0)
         self.entry_departamento = tk.Entry(self.root)
-        self.entry_departamento.grid(row=9, column=1)
+        self.entry_departamento.grid(row=11, column=1)
 
-        tk.Button(self.root, text="Agregar Profesor", command=self.agregar_profesor).grid(row=10, column=0, columnspan=2)
+        tk.Button(self.root, text="Agregar Profesor", command=self.agregar_profesor).grid(row=12, column=0, columnspan=2)
 
-        tk.Label(self.root, text="Asignatura:").grid(row=11, column=0)
+
+        # Entradas para ingresas los datos de las asignaturas
+
+        tk.Label(self.root, text="Asignatura:").grid(row=13, column=0)
         self.entry_nombre_asignatura = tk.Entry(self.root)
-        self.entry_nombre_asignatura.grid(row=11, column=1)
+        self.entry_nombre_asignatura.grid(row=13, column=1)
 
-        tk.Label(self.root, text="Código:").grid(row=12, column=0)
+        tk.Label(self.root, text="Código:").grid(row=14, column=0)
         self.entry_codigo_asignatura = tk.Entry(self.root)
-        self.entry_codigo_asignatura.grid(row=12, column=1)
+        self.entry_codigo_asignatura.grid(row=14, column=1)
 
-        tk.Label(self.root, text="Créditos:").grid(row=13, column=0)
+        tk.Label(self.root, text="Créditos:").grid(row=15, column=0)
         self.entry_creditos = tk.Entry(self.root)
-        self.entry_creditos.grid(row=13, column=1)
+        self.entry_creditos.grid(row=15, column=1)
 
-        tk.Button(self.root, text="Agregar Asignatura", command=self.agregar_asignatura).grid(row=14, column=0, columnspan=2)
+        tk.Button(self.root, text="Agregar Asignatura", command=self.agregar_asignatura).grid(row=16, column=0, columnspan=2)
 
-        tk.Label(self.root, text="Grupo:").grid(row=15, column=0)
+
+        # Entradas para ingresas los datos de los grupos
+
+        tk.Label(self.root, text="Grupo:").grid(row=17, column=0)
         self.entry_numero_grupo = tk.Entry(self.root)
-        self.entry_numero_grupo.grid(row=15, column=1)
+        self.entry_numero_grupo.grid(row=17, column=1)
 
-        tk.Label(self.root, text="Asignatura (Código):").grid(row=16, column=0)
+        tk.Label(self.root, text="Asignatura (Código):").grid(row=18, column=0)
         self.entry_asignatura_grupo = tk.Entry(self.root)
-        self.entry_asignatura_grupo.grid(row=16, column=1)
+        self.entry_asignatura_grupo.grid(row=18, column=1)
 
-        tk.Label(self.root, text="Profesor (Número):").grid(row=17, column=0)
+        tk.Label(self.root, text="Profesor (Número):").grid(row=19, column=0)
         self.entry_profesor_grupo = tk.Entry(self.root)
-        self.entry_profesor_grupo.grid(row=17, column=1)
+        self.entry_profesor_grupo.grid(row=19, column=1)
 
-        tk.Button(self.root, text="Agregar Grupo", command=self.agregar_grupo).grid(row=18, column=0, columnspan=2)
+        tk.Button(self.root, text="Agregar Grupo", command=self.agregar_grupo).grid(row=20, column=0, columnspan=2)
 
-        tk.Label(self.root, text="Programa Académico:").grid(row=19, column=0)
+
+        # Entradas para ingresas los datos del programa academico
+
+        tk.Label(self.root, text="Programa Académico:").grid(row=21, column=0)
         self.entry_nombre_programa = tk.Entry(self.root)
-        self.entry_nombre_programa.grid(row=19, column=1)
+        self.entry_nombre_programa.grid(row=21, column=1)
 
-        tk.Label(self.root, text="Código:").grid(row=20, column=0)
+        tk.Label(self.root, text="Código:").grid(row=22, column=0)
         self.entry_codigo_programa = tk.Entry(self.root)
-        self.entry_codigo_programa.grid(row=20, column=1)
+        self.entry_codigo_programa.grid(row=22, column=1)
 
-        tk.Button(self.root, text="Agregar Programa Académico", command=self.agregar_programa).grid(row=21, column=0, columnspan=2)
+        tk.Button(self.root, text="Agregar Programa Académico", command=self.agregar_programa).grid(row=23, column=0, columnspan=2)
 
-        tk.Button(self.root, text="Mostrar Información", command=self.mostrar_informacion).grid(row=22, column=0, columnspan=2)
+
+        # Mostrar toda la informacion agregada anteriormente
+        tk.Button(self.root, text="Mostrar Información", command=self.mostrar_informacion).grid(row=24, column=0, columnspan=2)
 
     def agregar_estudiante(self):
         nombre = self.entry_nombre_estudiante.get().strip()
         apellido = self.entry_apellido_estudiante.get().strip()
+        fecha_nacimiento = self.entry_nacimiento_estudiante.get().strip
         matricula = self.entry_matricula.get().strip()
         carrera = self.entry_carrera.get().strip()
         semestre = self.entry_semestre.get().strip()  
@@ -123,16 +149,14 @@ class GestionAcademicaApp:
             messagebox.showerror("Error", "El semestre debe ser mayor que cero.")
             return
         
-        nuevo_estudiante = Estudiante(nombre, apellido, "2000-01-01", matricula, carrera, semestre)
+        nuevo_estudiante = Estudiante(nombre, apellido, fecha_nacimiento, matricula, carrera, semestre)
         self.estudiantes.append(nuevo_estudiante)
         messagebox.showinfo("Éxito", "Estudiante agregado exitosamente!")
-
-            
-    
 
     def agregar_profesor(self):
         nombre = self.entry_nombre_profesor.get().strip()
         apellido = self.entry_apellido_profesor.get().strip()
+        fecha_nacimiento = self.entry_nacimiento_profesor.get().strip()
         numero_empleado = self.entry_numero_empleado.get().strip()
         departamento = self.entry_departamento.get().strip()
 
@@ -144,7 +168,7 @@ class GestionAcademicaApp:
             messagebox.showerror("Error", "El número de empleado debe ser un número entero.")
             return
 
-        nuevo_profesor = Profesor(nombre, apellido, "1985-01-01", numero_empleado, departamento)
+        nuevo_profesor = Profesor(nombre, apellido, fecha_nacimiento, numero_empleado, departamento)
         self.profesores.append(nuevo_profesor)
         messagebox.showinfo("Éxito", "Profesor agregado exitosamente!")
 
@@ -169,8 +193,6 @@ class GestionAcademicaApp:
         nueva_asignatura = Asignatura(nombre, codigo, creditos)
         self.asignaturas.append(nueva_asignatura)
         messagebox.showinfo("Éxito", "Asignatura agregada exitosamente!")
-
-        
 
     def agregar_grupo(self):
         numero_grupo = int(self.entry_numero_grupo.get())

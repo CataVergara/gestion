@@ -103,23 +103,30 @@ class GestionAcademicaApp:
         tk.Button(self.root, text="Mostrar Información", command=self.mostrar_informacion).grid(row=22, column=0, columnspan=2)
 
     def agregar_estudiante(self):
-        nombre = self.entry_nombre_estudiante.get()
-        apellido = self.entry_apellido_estudiante.get()
-        matricula = self.entry_matricula.get()
-        carrera = self.entry_carrera.get()
-        semestre = int(self.entry_semestre.get())
-
-            
+        nombre = self.entry_nombre_estudiante.get().strip()
+        apellido = self.entry_apellido_estudiante.get().strip()
+        matricula = self.entry_matricula.get().strip()
+        carrera = self.entry_carrera.get().strip()
+        semestre = self.entry_semestre.get().strip()  
+        
+        
         if not nombre or not apellido or not matricula or not carrera or not semestre:
             messagebox.showerror("Error", "Todos los campos del estudiante son obligatorios.")
             return
         
-        if not semestre.isdigit() or int(semestre) <= 0:
-            messagebox.showerror("Error", "El semestre debe ser un número entero positivo.")
+        
+        try:
+            semestre = int(semestre)  
+        except ValueError:
+            messagebox.showerror("Error", "El semestre debe ser un número entero.")
             return
 
+        if semestre <= 0:
+            messagebox.showerror("Error", "El semestre debe ser mayor que cero.")
+            return
         
-        nuevo_estudiante = Estudiante(nombre, apellido, "2000-01-01", matricula, carrera, int(semestre))
+        
+        nuevo_estudiante = Estudiante(nombre, apellido, "2000-01-01", matricula, carrera, semestre)
         self.estudiantes.append(nuevo_estudiante)
         messagebox.showinfo("Éxito", "Estudiante agregado exitosamente!")
             

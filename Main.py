@@ -1,3 +1,4 @@
+# Hecho por Catalina Vergara y Constanza Oyarzo
 import tkinter as tk
 from tkinter import messagebox
 from Persona import Persona
@@ -13,6 +14,7 @@ class GestionAcademicaApp:
         self.root = root
         self.root.title("Gestión Académica")
 
+        # Instancias del resto de clases en Main.py
         self.estudiantes = []
         self.profesores = []
         self.asignaturas = []
@@ -130,11 +132,13 @@ class GestionAcademicaApp:
     def agregar_estudiante(self):
         nombre = self.entry_nombre_estudiante.get().strip()
         apellido = self.entry_apellido_estudiante.get().strip()
-        fecha_nacimiento = self.entry_nacimiento_estudiante.get().strip
+        fecha_nacimiento = self.entry_nacimiento_estudiante.get().strip()
         matricula = self.entry_matricula.get().strip()
         carrera = self.entry_carrera.get().strip()
-        semestre = self.entry_semestre.get().strip()  
-        
+        semestre = self.entry_semestre.get().strip()
+
+        # Validaciones para los campos del estudiante
+        # Valida que no hayan campos vacios en las entradas del estudiante
         if not nombre or not apellido or not matricula or not carrera or not semestre:
             messagebox.showerror("Error", "Todos los campos del estudiante son obligatorios.")
             return
@@ -160,6 +164,7 @@ class GestionAcademicaApp:
         numero_empleado = self.entry_numero_empleado.get().strip()
         departamento = self.entry_departamento.get().strip()
 
+        # Validaciones para los campos del profesor
         if not nombre or not apellido or not numero_empleado or not departamento:
             messagebox.showerror("Error", "Todos los campos del profesor son obligatorios.")
             return
@@ -178,6 +183,7 @@ class GestionAcademicaApp:
         codigo = self.entry_codigo_asignatura.get().strip()
         creditos = self.entry_creditos.get().strip()
 
+        # Validaciones para los campos de la asignatura
         if not nombre or not codigo or not creditos:
             messagebox.showerror("Error", "Todos los campos de la asignatura son obligatorios.")
             return
@@ -199,7 +205,7 @@ class GestionAcademicaApp:
         codigo_asignatura = self.entry_asignatura_grupo.get()
         numero_empleado = self.entry_profesor_grupo.get()
 
-        
+        # Validaciones para los campos en grupos
         if any(grupo.numero_grupo == numero_grupo for grupo in self.grupos):
             messagebox.showerror("Error", "El grupo ya existe.")
             return
@@ -213,8 +219,6 @@ class GestionAcademicaApp:
             messagebox.showinfo("Éxito", "Grupo agregado exitosamente!")
         else:
             messagebox.showerror("Error", "Asignatura o profesor no encontrado.")
-
-
 
     def agregar_programa(self):
         nombre = self.entry_nombre_programa.get()

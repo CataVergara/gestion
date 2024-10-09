@@ -36,5 +36,5 @@ class Asignatura:
             return f"Asignatura: {self.nombre} (Código: {self.codigo}), Créditos: {self.creditos}"
 
     @classmethod
-    def cantidad_asignaturas(cls):
+    def cantidad_asignaturas(cls)->int:
         return cls._contador_asignaturas
